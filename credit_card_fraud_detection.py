@@ -12,7 +12,8 @@ from imblearn.over_sampling import SMOTE   # handle imbalance
 import joblib
 
 df = pd.read_csv('Credit_card_fraud_dataset.csv')
-print(df)
+print(df.head())
+print("Shape", df.shape)
 
 
 
