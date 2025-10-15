@@ -15,5 +15,14 @@ df = pd.read_csv('Credit_card_fraud_dataset.csv')
 print(df.head())
 print("Shape", df.shape)
 
+TARGET = 'Fraud'
+
+print("\nMissing values per column:\n", df.isnull().sum())
+print("\nTarget distribution:\n", df[TARGET].value_counts(normalize=True))
+
+sns.countplot(x=TARGET, data=df)
+plt.title("Target distribution")
+plt.show()
+
 
 
