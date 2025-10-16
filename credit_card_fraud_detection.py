@@ -71,6 +71,11 @@ def evaluate_model(model, X_test_scaled, y_test, name="Model"):
 evaluate_model(lr, X_test_scaled, y_test, "Logistic Regression")
 evaluate_model(rf, X_test_scaled, y_test, "Random Forest")
 
+param_grid = {
+    'n_estimators': [100, 200],
+    'max_depth': [None, 10, 20],
+    'min_samples_split': [2, 5]
+}
 
 
 
