@@ -89,3 +89,10 @@ best_rf = gs.best_estimator_
 evaluate_model(best_rf, X_test_scaled, y_test, "Tuned Random Forest")
 
 joblib.dump({'model': best_rf, 'scaler': scaler}, 'final_fraud_model.joblib')
+
+#Predict on new data
+new_sample = X_test.iloc[0:1]
+new_sample_scaled = scaler.transform(new_sample)
+pred = best_rf.predict(new_sample_scaled)
+prob = best_rf.predict_proba(new_sample_scaled)[:,1]
+print("Prediction:", pred, "Probability:", prob)
