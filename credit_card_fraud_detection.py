@@ -79,6 +79,11 @@ param_grid = {
 
 cv = StratifiedKFold(n_splits=3, shuffle=True, random_state=42)
 
+gs = GridSearchCV(RandomForestClassifier(random_state=42, n_jobs=-1),
+                  param_grid, scoring='f1', n_jobs=-1, cv=cv, verbose=1)
 
+gs.fit(X_train_res, y_train_res)
+print("Best params:", gs.best_params_)
+best_rf = gs.best_estimator_
 
 
