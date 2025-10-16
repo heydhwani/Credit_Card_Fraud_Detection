@@ -41,7 +41,10 @@ X_test_scaled = scaler.transform(X_test)
 # 6) Handle imbalance with SMOTE on the training set only
 sm = SMOTE(random_state=42)
 X_train_res, y_train_res = sm.fit_resample(X_train_scaled, y_train)
+
+
 print("After resampling, counts:", np.bincount(y_train_res))
+
 
 
 
