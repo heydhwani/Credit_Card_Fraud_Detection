@@ -48,7 +48,13 @@ print("After resampling, counts:", np.bincount(y_train_res))
 lr = LogisticRegression(max_iter=1000)
 lr.fit(X_train_res, y_train_res)
 
+print("Training complete")
 
+rf = RandomForestClassifier(n_estimators=100, random_state=42, n_jobs=-1)
+rf.fit(X_train_res, y_train_res)
+
+def evaluate_model(model, X_test_scaled, y_test, name="Model"):
+    y_pred = model.predict(X_test_scaled)
 
 
 
