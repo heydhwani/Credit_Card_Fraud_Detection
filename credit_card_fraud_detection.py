@@ -45,6 +45,10 @@ X_train_res, y_train_res = sm.fit_resample(X_train_scaled, y_train)
 
 print("After resampling, counts:", np.bincount(y_train_res))
 
+lr = LogisticRegression(max_iter=1000)
+lr.fit(X_train_res, y_train_res)
+
+
 
 
 
