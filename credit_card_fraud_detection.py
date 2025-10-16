@@ -77,6 +77,8 @@ param_grid = {
     'min_samples_split': [2, 5]
 }
 
+cv = StratifiedKFold(n_splits=3, shuffle=True, random_state=42)
+
 
 
 
