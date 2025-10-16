@@ -86,4 +86,6 @@ gs.fit(X_train_res, y_train_res)
 print("Best params:", gs.best_params_)
 best_rf = gs.best_estimator_
 
+evaluate_model(best_rf, X_test_scaled, y_test, "Tuned Random Forest")
 
+joblib.dump({'model': best_rf, 'scaler': scaler}, 'final_fraud_model.joblib')
