@@ -56,6 +56,20 @@ rf.fit(X_train_res, y_train_res)
 def evaluate_model(model, X_test_scaled, y_test, name="Model"):
     y_pred = model.predict(X_test_scaled)
 
+    y_prob = model.predict_proba(X_test_scaled)[:, 1] if hasattr(model, "predict_proba") else None
+
+    print(f"\n=== Evaluation: {name} ===")
+    print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
+
+    print("\nClassification Report:\n", classification_report(y_test, y_pred, digits=4))
+
+    if y_prob is not None:
+        roc_auc = roc_auc_score(y_test, y_prob)
+        ap = average_precision_score(y_test, y_prob)
+        print(f"ROC AUC: {roc_auc:.4f}, Average Precision (PR AUC): {ap:.4f}")
+
+evaluate_model(lr, X_test_scaled, y_test, "Logistic Regression")
+evaluate_model(rf, X_test_scaled, y_test, "Random Forest")
 
 
 
