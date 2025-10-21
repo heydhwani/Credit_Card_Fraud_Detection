@@ -22,6 +22,11 @@ class Transaction(BaseModel):
     Merchant_Category: str
     Country: str
 
+
+@app.get("/")
+def home():
+    return {"message": "✅ Credit Card Fraud Detection API is Live!"}
+
 @app.post('/predict')
 async def predict(transaction: Transaction):
     try:
