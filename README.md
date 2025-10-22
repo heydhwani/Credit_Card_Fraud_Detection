@@ -19,7 +19,7 @@ It helps financial institutions and users identify potential fraud in real-time.
 ---
 
 ## 📂 Project Structure
-
+---
 Credit_Card_Fraud_Detection/
 │
 ├── data/ # Dataset files
@@ -28,7 +28,7 @@ Credit_Card_Fraud_Detection/
 ├── requirements.txt # Python dependencies
 ├── README.md # Project documentation
 └── .gitignore # Git ignored files
-
+---
 
 ---
 
@@ -114,11 +114,17 @@ uvicorn app:app --reload
 
 ### Then open your browser at 👉 http://127.0.0.1:8000
 
-## 🧠 Future Improvements
+## 🧠 Model Performance
 ---
-- Add more features and real-time data.
+- **Accuracy:** 92.5%  
+- **Precision (fraud):** 0.97  
+- **Recall (fraud):** 0.76  
 
-- Use deep learning models (e.g., LSTM) for sequential pattern detection.
-
-- Build a frontend dashboard for visualization.
 ---
+
+## Render Link
+https://credit-card-fraud-detection-sger.onrender.com
+
+## Dataset Link
+https://drive.google.com/file/d/1ikd8_D7_8MGvGiMauhaU7bOpkxtxL3EZ/view?usp=drive_link
+
