@@ -19,16 +19,17 @@ It helps financial institutions and users identify potential fraud in real-time.
 ---
 
 ## 📂 Project Structure
----
+
+```
 Credit_Card_Fraud_Detection/
 │
-├── data/ # Dataset files
-├── models/ # Saved trained model (.pkl or .joblib)
-├── app.py # FastAPI backend file
-├── requirements.txt # Python dependencies
-├── README.md # Project documentation
-└── .gitignore # Git ignored files
----
+├── data/                         # Dataset files
+├── models/                       # Saved trained model (.pkl or .joblib)
+├── app.py                        # FastAPI backend file
+├── requirements.txt              # Python dependencies
+├── README.md                     # Project documentation
+└── .gitignore                    # Git ignored files
+```
 
 ---
 
