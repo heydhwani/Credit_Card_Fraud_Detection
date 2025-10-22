@@ -94,5 +94,31 @@ Credit_Card_Fraud_Detection/
   "Merchant_Category": "Online",
   "Country": "India"
 }
+```
+
+## 🧰 How to Run the Project Locally
+### 1️⃣ Clone the Repository
+git clone https://github.com/yourusername/Credit_Card_Fraud_Detection.git
+cd Credit_Card_Fraud_Detection
+
+### 2️⃣ Create Virtual Environment
+python -m venv venv
+venv\Scripts\activate     # For Windows
+
+### 3️⃣ Install Dependencies
+pip install -r requirements.txt
+
+### 4️⃣ Run the API
+uvicorn app:app --reload
 
 
+### Then open your browser at 👉 http://127.0.0.1:8000
+
+## 🧠 Future Improvements
+---
+- Add more features and real-time data.
+
+- Use deep learning models (e.g., LSTM) for sequential pattern detection.
+
+- Build a frontend dashboard for visualization.
+---
