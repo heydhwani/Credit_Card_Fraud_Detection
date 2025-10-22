@@ -1,149 +1,98 @@
-# Credit_Card_Fraud_Detection
-
-## Overview
-
-This project detects fraudulent credit card transactions using Machine Learning.
-It applies a trained model (XGBoost Classifier) to classify whether a given transaction is fraudulent (1) or legitimate (0) based on various transaction features.
-
-
+# 💳 Credit Card Fraud Detection
 
 ## 🧠 Objective
+The main objective of this project is to detect fraudulent credit card transactions using **Machine Learning** techniques.  
+It helps financial institutions and users identify potential fraud in real-time.
 
-The goal is to build a predictive model that:
-
-- Identifies fraudulent transactions.
-
-- Minimizes false positives (non-fraud flagged as fraud).
-
-- Accurately detects both fraud and non-fraud transactions.
-
-
+---
 
 ## ⚙️ Tech Stack
-### Category	Technologies Used
-- Language	Python
-- Libraries	Pandas, NumPy, Scikit-learn, XGBoost, Joblib, FastAPI
-- Model	XGBoost Classifier
-- Deployment	Render
-- API Framework	FastAPI
-- Testing Tool	Postman
 
+### 🧩 Category: Technologies Used
+- **Language:** Python  
+- **Libraries:** Pandas, NumPy, Scikit-learn, XGBoost, Joblib, FastAPI  
+- **Model:** XGBoost Classifier  
+- **Deployment:** Render  
+- **API Framework:** FastAPI  
+- **Testing Tool:** Postman  
+
+---
 
 ## 📂 Project Structure
+
 Credit_Card_Fraud_Detection/
 │
-├── app.py                     # FastAPI backend
-├── train_model.py             # Model training script
-├── model.joblib               # Saved ML model
-├── label_encoders.joblib      # Saved label encoders for categorical columns
-├── requirements.txt           # Dependencies
-├── dataset.csv                # Training dataset
-└── README.md                  # Project documentation
+├── data/ # Dataset files
+├── models/ # Saved trained model (.pkl or .joblib)
+├── app.py # FastAPI backend file
+├── requirements.txt # Python dependencies
+├── README.md # Project documentation
+└── .gitignore # Git ignored files
 
 
+---
 
-## 🧩 Dataset Details
+## 📊 Dataset Description
 
-### The dataset contains both fraudulent and non-fraudulent transactions with balanced targets.
+- **Dataset Source:** Public dataset (e.g., Kaggle or custom small CSV)  
+- **Number of Rows:** ~800  
+- **Columns Include:**  
+  - `TransactionID`  
+  - `Amount`  
+  - `Time`  
+  - `OldBalanceOrig`, `NewBalanceOrig`  
+  - `OldBalanceDest`, `NewBalanceDest`  
+  - `TransactionType`  
+  - `Card_Age_Month`  
+  - `Merchant_Category`  
+  - `Fraud` (Target variable: 0 = Non-fraud, 1 = Fraud)
 
-## Key Features:
-
-- Time – Time of the transaction
-
-- Amount – Transaction amount
-
-- OldBalanceOrig / NewBalanceOrig – Original account balances before & after transaction
-
-- OldBalanceDest / NewBalanceDest – Destination balances
-
-- TransactionType – Type of transaction (Payment, Transfer, etc.)
-
-- Card_Age_Month – Card age in months
-
-- Merchant_Category – Merchant type (e.g., Electronics, Grocery)
-
-- Country – Country where the transaction occurred
-
-- Fraud – Target variable (1 = Fraud, 0 = Not Fraud)
-
-
+---
 
 ## 🧮 Model Training
 
-### The model was trained using XGBoost, achieving:
+- Preprocessing done using **Pandas** and **Scikit-learn**
+- Model used: **XGBoost Classifier**
+- Evaluation Metrics:
+  - Accuracy
+  - Precision
+  - Recall
+  - F1 Score
 
-- Accuracy: ~92.5%
+---
 
-- Precision (fraud): 0.97
+## 🚀 Deployment
 
-- Recall (fraud): 0.76
+- **Framework:** FastAPI  
+- **Platform:** Render  
+- The trained model is loaded using **Joblib** and exposed via API endpoints.
 
+---
 
+## 🌐 API Endpoints
 
-## Confusion Matrix:
+| Method | Endpoint | Description |
+|:------:|-----------|-------------|
+| `GET` | `/` | Home route (API running check) |
+| `POST` | `/predict` | Predicts if a transaction is fraudulent |
 
-''' Actual \ Predicted	Not Fraud (0)	Fraud (1)
-Not Fraud (0)	113	1
-Fraud (1)	11	35 '''
+---
 
+### 🧾 Example JSON for Testing (Postman)
 
-
-### Base URL
-https://credit-card-fraud-detection-sger.onrender.com
-
-
-
-### POST /predict
-
-👉 Predicts whether a transaction is fraudulent or not.
-
-### Request (JSON):
-
-'''{
-  "Time": 45000,
+```json
+{
+  "TransactionID": 10234,
   "Amount": 250.75,
-  "OldBalanceOrig": 1500.50,
-  "NewBalanceOrig": 1249.75,
-  "OldBalanceDest": 2000.00,
-  "NewBalanceDest": 2250.75,
-  "TransactionType": "Payment",
+  "Time": 32400,
+  "OldBalanceOrig": 5000.0,
+  "NewBalanceOrig": 4750.0,
+  "OldBalanceDest": 2000.0,
+  "NewBalanceDest": 2250.0,
+  "TransactionType": "TRANSFER",
   "Card_Age_Month": 36,
-  "Merchant_Category": "Electronics",
-  "Country": "USA"
-}'''
+  "Merchant_Category": "Online",
+  "Country": "India"
+}
 
 
-### Response (JSON):
-
-'''{
-  "Fraud": 0,
-  "Fraud_Probability": 0.02
-}'''
-
-
-
-## 🌐 Deployment
-
-### This API is deployed using Render, which automatically runs:
-
-uvicorn app:app --host 0.0.0.0 --port 8000
-
-
-
-## 📈 Future Improvements
-
-- Add database integration for live transaction storage
-
-- Use real-time data streams (Kafka / AWS)
-
-- Train with a larger dataset for better fraud recall
-
-- Add dashboard visualization for predictions
-
-
-
-## 👩‍💻 Author
-
-Dhwani Jain
-🎓 B.Tech Student, AKTU University (2027 Batch)
-💻 Focused on AI Engineering & Machine Learning
