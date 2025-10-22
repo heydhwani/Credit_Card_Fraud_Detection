@@ -1,35 +1,35 @@
 # Credit_Card_Fraud_Detection
-💳 Credit Card Fraud Detection
-📋 Overview
+
+## Overview
 
 This project detects fraudulent credit card transactions using Machine Learning.
 It applies a trained model (XGBoost Classifier) to classify whether a given transaction is fraudulent (1) or legitimate (0) based on various transaction features.
 
 
 
-🧠 Objective
+## 🧠 Objective
 
 The goal is to build a predictive model that:
 
-Identifies fraudulent transactions.
+- Identifies fraudulent transactions.
 
-Minimizes false positives (non-fraud flagged as fraud).
+- Minimizes false positives (non-fraud flagged as fraud).
 
-Accurately detects both fraud and non-fraud transactions.
-
-
-
-⚙️ Tech Stack
-Category	Technologies Used
-Language	Python
-Libraries	Pandas, NumPy, Scikit-learn, XGBoost, Joblib, FastAPI
-Model	XGBoost Classifier
-Deployment	Render
-API Framework	FastAPI
-Testing Tool	Postman
+- Accurately detects both fraud and non-fraud transactions.
 
 
-📂 Project Structure
+
+## ⚙️ Tech Stack
+### Category	Technologies Used
+- Language	Python
+- Libraries	Pandas, NumPy, Scikit-learn, XGBoost, Joblib, FastAPI
+- Model	XGBoost Classifier
+- Deployment	Render
+- API Framework	FastAPI
+- Testing Tool	Postman
+
+
+## 📂 Project Structure
 Credit_Card_Fraud_Detection/
 │
 ├── app.py                     # FastAPI backend
@@ -42,62 +42,64 @@ Credit_Card_Fraud_Detection/
 
 
 
-🧩 Dataset Details
+## 🧩 Dataset Details
 
-The dataset contains both fraudulent and non-fraudulent transactions with balanced targets.
+### The dataset contains both fraudulent and non-fraudulent transactions with balanced targets.
 
-Key Features:
+## Key Features:
 
-Time – Time of the transaction
+- Time – Time of the transaction
 
-Amount – Transaction amount
+- Amount – Transaction amount
 
-OldBalanceOrig / NewBalanceOrig – Original account balances before & after transaction
+- OldBalanceOrig / NewBalanceOrig – Original account balances before & after transaction
 
-OldBalanceDest / NewBalanceDest – Destination balances
+- OldBalanceDest / NewBalanceDest – Destination balances
 
-TransactionType – Type of transaction (Payment, Transfer, etc.)
+- TransactionType – Type of transaction (Payment, Transfer, etc.)
 
-Card_Age_Month – Card age in months
+- Card_Age_Month – Card age in months
 
-Merchant_Category – Merchant type (e.g., Electronics, Grocery)
+- Merchant_Category – Merchant type (e.g., Electronics, Grocery)
 
-Country – Country where the transaction occurred
+- Country – Country where the transaction occurred
 
-Fraud – Target variable (1 = Fraud, 0 = Not Fraud)
-
-
-
-🧮 Model Training
-
-The model was trained using XGBoost, achieving:
-
-Accuracy: ~92.5%
-
-Precision (fraud): 0.97
-
-Recall (fraud): 0.76
+- Fraud – Target variable (1 = Fraud, 0 = Not Fraud)
 
 
 
-Confusion Matrix:
+## 🧮 Model Training
 
-Actual \ Predicted	Not Fraud (0)	Fraud (1)
+### The model was trained using XGBoost, achieving:
+
+- Accuracy: ~92.5%
+
+- Precision (fraud): 0.97
+
+- Recall (fraud): 0.76
+
+
+
+## Confusion Matrix:
+
+''' Actual \ Predicted	Not Fraud (0)	Fraud (1)
 Not Fraud (0)	113	1
-Fraud (1)	11	35
-🚀 API Endpoints
-Base URL
+Fraud (1)	11	35 '''
+
+
+
+### Base URL
 https://credit-card-fraud-detection-sger.onrender.com
 
 
 
-POST /predict
+### POST /predict
 
 👉 Predicts whether a transaction is fraudulent or not.
 
-Request (JSON):
+### Request (JSON):
 
-{
+'''{
   "Time": 45000,
   "Amount": 250.75,
   "OldBalanceOrig": 1500.50,
@@ -108,39 +110,39 @@ Request (JSON):
   "Card_Age_Month": 36,
   "Merchant_Category": "Electronics",
   "Country": "USA"
-}
+}'''
 
 
-Response (JSON):
+### Response (JSON):
 
-{
+'''{
   "Fraud": 0,
   "Fraud_Probability": 0.02
-}
+}'''
 
 
 
-🌐 Deployment
+## 🌐 Deployment
 
-This API is deployed using Render, which automatically runs:
+### This API is deployed using Render, which automatically runs:
 
 uvicorn app:app --host 0.0.0.0 --port 8000
 
 
 
-📈 Future Improvements
+## 📈 Future Improvements
 
-Add database integration for live transaction storage
+- Add database integration for live transaction storage
 
-Use real-time data streams (Kafka / AWS)
+- Use real-time data streams (Kafka / AWS)
 
-Train with a larger dataset for better fraud recall
+- Train with a larger dataset for better fraud recall
 
-Add dashboard visualization for predictions
+- Add dashboard visualization for predictions
 
 
 
-👩‍💻 Author
+## 👩‍💻 Author
 
 Dhwani Jain
 🎓 B.Tech Student, AKTU University (2027 Batch)
