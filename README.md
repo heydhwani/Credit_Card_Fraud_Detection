@@ -5,6 +5,8 @@
 This project detects fraudulent credit card transactions using Machine Learning.
 It applies a trained model (XGBoost Classifier) to classify whether a given transaction is fraudulent (1) or legitimate (0) based on various transaction features.
 
+
+
 🧠 Objective
 
 The goal is to build a predictive model that:
@@ -15,6 +17,8 @@ Minimizes false positives (non-fraud flagged as fraud).
 
 Accurately detects both fraud and non-fraud transactions.
 
+
+
 ⚙️ Tech Stack
 Category	Technologies Used
 Language	Python
@@ -23,6 +27,8 @@ Model	XGBoost Classifier
 Deployment	Render
 API Framework	FastAPI
 Testing Tool	Postman
+
+
 📂 Project Structure
 Credit_Card_Fraud_Detection/
 │
@@ -33,6 +39,8 @@ Credit_Card_Fraud_Detection/
 ├── requirements.txt           # Dependencies
 ├── dataset.csv                # Training dataset
 └── README.md                  # Project documentation
+
+
 
 🧩 Dataset Details
 
@@ -58,6 +66,8 @@ Country – Country where the transaction occurred
 
 Fraud – Target variable (1 = Fraud, 0 = Not Fraud)
 
+
+
 🧮 Model Training
 
 The model was trained using XGBoost, achieving:
@@ -68,6 +78,8 @@ Precision (fraud): 0.97
 
 Recall (fraud): 0.76
 
+
+
 Confusion Matrix:
 
 Actual \ Predicted	Not Fraud (0)	Fraud (1)
@@ -76,6 +88,8 @@ Fraud (1)	11	35
 🚀 API Endpoints
 Base URL
 https://credit-card-fraud-detection-sger.onrender.com
+
+
 
 POST /predict
 
@@ -104,39 +118,15 @@ Response (JSON):
   "Fraud_Probability": 0.02
 }
 
-🧰 How to Run Locally
 
-Clone the repository
-
-git clone https://github.com/your-username/Credit_Card_Fraud_Detection.git
-cd Credit_Card_Fraud_Detection
-
-
-Create a virtual environment
-
-python -m venv venv
-venv\Scripts\activate       # For Windows
-
-
-Install dependencies
-
-pip install -r requirements.txt
-
-
-Run the FastAPI app
-
-uvicorn app:app --reload
-
-
-Test API in browser
-Visit:
-👉 http://127.0.0.1:8000/docs for Swagger UI
 
 🌐 Deployment
 
 This API is deployed using Render, which automatically runs:
 
 uvicorn app:app --host 0.0.0.0 --port 8000
+
+
 
 📈 Future Improvements
 
@@ -147,6 +137,8 @@ Use real-time data streams (Kafka / AWS)
 Train with a larger dataset for better fraud recall
 
 Add dashboard visualization for predictions
+
+
 
 👩‍💻 Author
 
