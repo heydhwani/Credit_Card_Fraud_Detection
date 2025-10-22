@@ -23,6 +23,8 @@ Model	XGBoost Classifier
 Deployment	Render
 API Framework	FastAPI
 Testing Tool	Postman
+
+
 📂 Project Structure
 Credit_Card_Fraud_Detection/
 │
@@ -34,9 +36,13 @@ Credit_Card_Fraud_Detection/
 ├── dataset.csv                # Training dataset
 └── README.md                  # Project documentation
 
+
+
 🧩 Dataset Details
 
 The dataset contains both fraudulent and non-fraudulent transactions with balanced targets.
+
+
 
 Key Features:
 
@@ -58,6 +64,8 @@ Country – Country where the transaction occurred
 
 Fraud – Target variable (1 = Fraud, 0 = Not Fraud)
 
+
+
 🧮 Model Training
 
 The model was trained using XGBoost, achieving:
@@ -68,11 +76,15 @@ Precision (fraud): 0.97
 
 Recall (fraud): 0.76
 
+
+
 Confusion Matrix:
 
 Actual \ Predicted	Not Fraud (0)	Fraud (1)
 Not Fraud (0)	113	1
 Fraud (1)	11	35
+
+
 🚀 API Endpoints
 Base URL
 https://credit-card-fraud-detection-sger.onrender.com
@@ -80,6 +92,7 @@ https://credit-card-fraud-detection-sger.onrender.com
 POST /predict
 
 👉 Predicts whether a transaction is fraudulent or not.
+
 
 Request (JSON):
 
@@ -132,11 +145,15 @@ Test API in browser
 Visit:
 👉 http://127.0.0.1:8000/docs for Swagger UI
 
+
+
 🌐 Deployment
 
 This API is deployed using Render, which automatically runs:
 
 uvicorn app:app --host 0.0.0.0 --port 8000
+
+
 
 📈 Future Improvements
 
@@ -147,6 +164,8 @@ Use real-time data streams (Kafka / AWS)
 Train with a larger dataset for better fraud recall
 
 Add dashboard visualization for predictions
+
+
 
 👩‍💻 Author
 
